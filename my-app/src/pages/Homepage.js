@@ -1,27 +1,38 @@
 import React from 'react';
-import { OverlayNav } from '../components/OverlayNav'
+// librairies
 import styled from 'styled-components';
 
+//components
+import { Header } from '../components/Header';
 
 const Wrapper = styled.div`
   margin: 0;
+  height: 100vh;
 `
 // Section top
 const SectionHeader = styled.div`
-  float: left;
-  display: flex;
-  text-align: center;
-  padding: 25px 100px;
-  text-decoration: none;
-  font-size: 3rem;
-  background: #0375FF;
-  width: 100%;
+  height: 100px;
+  background-color: #0375FF;
   justify-content: space-between;
+  padding: 20px;
 `
 
 const Emoticon = styled.span`
-  font-size: 4rem;
+  position: absolute;
+  font-size: 10vh;
+  cursor: pointer;
+  color: #0D0D0D;
+  left: 10%;
 `
+
+const HamburgerMenu = styled.span`
+  position: absolute;
+  font-size: 8vh;
+  cursor: pointer;
+  color: #0D0D0D;
+  right: 10%;
+`
+
 // Section Header Hero
 
 // Section Intro
@@ -35,9 +46,9 @@ export const Homepage = () => {
     <Wrapper>
       <SectionHeader>
         <Emoticon>&#9787;</Emoticon>
-        <OverlayNav />
+        <HamburgerMenu>&#9776;</HamburgerMenu>
       </SectionHeader>
-
+      <Header />
     </Wrapper>
 
 

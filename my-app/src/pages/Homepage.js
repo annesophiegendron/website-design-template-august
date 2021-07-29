@@ -22,7 +22,7 @@ const Emoticon = styled.span`
   font-size: 10vh;
   cursor: pointer;
   color: #0D0D0D;
-  left: 10%;
+  left: 5%;
 `
 
 const HamburgerMenu = styled.span`
@@ -30,7 +30,7 @@ const HamburgerMenu = styled.span`
   font-size: 8vh;
   cursor: pointer;
   color: #0D0D0D;
-  right: 10%;
+  right: 5%;
 `
 
 // Section Header Hero

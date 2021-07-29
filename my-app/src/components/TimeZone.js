@@ -8,6 +8,11 @@ import 'moment-timezone';
 
 const Container = styled.div`
   text-align: center;
+  display: none;
+
+  @media (min-width: 992px) {
+    display: block;
+  }
 `
 
 const ListWrapper = styled.ul`

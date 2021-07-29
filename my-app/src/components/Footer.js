@@ -6,6 +6,14 @@ const Container = styled.div`
   background: #E75603;
   display: flex;
   justify-content: space-around;
+  margin-top: auto;
+  bottom: 0
+
+    @media (min-width: 992px) {
+      height: inherit;
+      padding: 70px 40px;
+    }
+
 `
 
 const Emoticon = styled.span`

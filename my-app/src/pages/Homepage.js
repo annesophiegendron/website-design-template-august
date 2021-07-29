@@ -13,6 +13,8 @@ import { ArrowSvg } from '../assets/svg/arrow_svg';
 const Wrapper = styled.div`
   margin: 0;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 `
 // Section top
 const SectionHeader = styled.div`
@@ -41,7 +43,7 @@ const HamburgerMenu = styled.span`
 // Section Intro
 const SectionIntro = styled.section`
   display: block;
-  height: 40vh;
+  margin-top: auto;
 
   @media (min-width: 992px) {
     display: grid;
@@ -58,25 +60,33 @@ const SectionIntro = styled.section`
 `
 
 const IntroTitleLeft = styled.h3`
-  grid-row: 2 span;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: left;
   text-transform: capitalize;
   font-size: 48px;
   font-weight: 500;
   letter-spacing: 2px;
   height: 300px;
-  margin-top: auto;
   padding-left: 10%;
   padding-right: 10%;
+  margin-top: auto;
+
+  @media (min-width: 992px) {
+    margin: inherit;
+  }
 `
 
 const TextWrap = styled.div`
   display: flex;
   flex-direction: column;
   height: 300px;
+  transform: translateY(-100px);
+
+  @media (min-width: 992px) {
+    transform: inherit;
+  }
 `
 
 const IntroTextRight = styled.p`
@@ -87,9 +97,16 @@ const IntroTextRight = styled.p`
   padding: 10%;
   text-align: left;
   letter-spacing: 1px;
-  line-height: 25px;
-  font-size: 14px;
-  `
+  line-height: 30px;
+  font-size: 24px;
+  margin-top: auto;
+  font-weight: 300;
+
+  @media (min-width: 992px) {
+    font-size: 14px;
+    line-height: 25px;
+  }
+ `
 
 const IntroTextLink = styled.p`
   display: flex;
@@ -119,6 +136,7 @@ export const Homepage = () => {
           <IntroTextLink>How to win a popularity contest <a style={{ paddingLeft: "25px", marginTop: "-5px"}} href="#"><ArrowSvg /></a></IntroTextLink>
         </TextWrap>
       </SectionIntro>
+      <div style={{height: "50px"}}></div>
       <Footer />
     </Wrapper>
   )

@@ -6,9 +6,7 @@ import styled from 'styled-components';
 //components
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-
-// assets
-import { ArrowSvg } from '../assets/svg/arrow_svg';
+import { Article } from '../components/Article';
 
 const Wrapper = styled.div`
   margin: 0;
@@ -40,88 +38,7 @@ const HamburgerMenu = styled.span`
   right: 5%;
 `
 
-// Section Intro
-const SectionIntro = styled.section`
-  display: block;
-  margin-top: auto;
-
-  @media (min-width: 992px) {
-    display: grid;
-    grid-auto-rows: 1fr;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    &:before {
-      content: "";
-      grid-row: 1/2;
-      grid-column: 3/3;
-    }
-  }
-}
-`
-
-const IntroTitleLeft = styled.h3`
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: capitalize;
-  font-size: 48px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  height: 300px;
-  padding-left: 10%;
-  padding-right: 10%;
-  margin-top: auto;
-
-  @media (min-width: 992px) {
-    margin: inherit;
-  }
-`
-
-const TextWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 300px;
-  transform: translateY(-100px);
-
-  @media (min-width: 992px) {
-    transform: inherit;
-  }
-`
-
-const IntroTextRight = styled.p`
-  grid-row: 2 span;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10%;
-  text-align: left;
-  letter-spacing: 1px;
-  line-height: 30px;
-  font-size: 24px;
-  margin-top: auto;
-  font-weight: 300;
-
-  @media (min-width: 992px) {
-    font-size: 14px;
-    line-height: 25px;
-  }
- `
-
-const IntroTextLink = styled.p`
-  display: flex;
-  padding:  0 0 0 10%;
-  letter-spacing: 2px;
-  transform: translateY(-60px);
-  font-size: 10px;
-  text-transform: uppercase;
-  text-align: center;
-`
-
-// Section products /double column grid
-
-
-export const Homepage = () => {
+export const Homepage = (props) => {
   return (
     <Wrapper>
       <SectionHeader>
@@ -129,14 +46,12 @@ export const Homepage = () => {
         <HamburgerMenu>&#9776;</HamburgerMenu>
       </SectionHeader>
       <Header />
-      <SectionIntro>
-        <IntroTitleLeft>Popular. It's not for everyone. </IntroTitleLeft>
-        <TextWrap>
-          <IntroTextRight>Branding is a popularity contest – after all, products don’t end up in people’s homes by chance. So, that’s what we do. Simplify and amplify, to help define and design tomorrow’s most popular consumer brands.</IntroTextRight>
-          <IntroTextLink>How to win a popularity contest <a style={{ paddingLeft: "25px", marginTop: "-5px"}} href="#"><ArrowSvg /></a></IntroTextLink>
-        </TextWrap>
-      </SectionIntro>
-      <div style={{height: "50px"}}></div>
+      <Article
+        leftTitle="Popular. It’s Not For
+        Everyone."
+        text="Branding is a popularity contest – after all, products don’t end up in people’s homes by chance. So, that’s what we do. Simplify and amplify, to help define and design tomorrow’s most popular consumer brands."
+        linkText="how to win a popularity contest"
+      />
       <Footer />
     </Wrapper>
   )

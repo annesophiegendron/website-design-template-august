@@ -17,7 +17,7 @@ const SmallTitle = styled.h1`
   margin:0;
   padding:0;
   animation: slide-up 0.5s linear;
-
+4
   @keyframes slide-up {
     from {
       transform: translateY(50px);
@@ -44,7 +44,6 @@ const BigTitle = styled.h2`
 const SectionTime = styled.section`
   background: #0375FF;
   padding: 3vh 0;
-
 `
 
 export const Header = () => {
@@ -59,4 +58,4 @@ export const Header = () => {
       </SectionTime>
     </div>
   )
-}
+};

@@ -34,27 +34,31 @@ const CityName = styled.span`
   font-size: 0.95rem;
 `
 
-
 export const TimeZone = () => {
   return (
     <Container>
       <ListWrapper>
         <ListElement>
-          <CityName>London {' '}</CityName><Clock format={'HH:mm:ss'} ticking={true} timezone={'Europe/London'} />
+          <CityName>London {' '}</CityName>
+          <Clock format={'HH:mm:ss'} ticking={true} timezone={'Europe/London'} />
         </ListElement>
         <ListElement>
-        <CityName>New York {' '}</CityName><Clock format={'HH:mm:ss'} ticking={true} timezone={'America/New_York'} />
+          <CityName>New York {' '}</CityName>
+          <Clock format={'HH:mm:ss'} ticking={true} timezone={'America/New_York'} />
         </ListElement>
         <ListElement>
-        <CityName>Tokyo {' '}</CityName><Clock format={'HH:mm:ss'} ticking={true} timezone={'Asia/Tokyo'} />
+          <CityName>Tokyo {' '}</CityName>
+          <Clock format={'HH:mm:ss'} ticking={true} timezone={'Asia/Tokyo'} />
         </ListElement>
         <ListElement>
-        <CityName>Shanghaï {' '}</CityName><Clock format={'HH:mm:ss'} ticking={true} timezone={'Asia/Shanghai'} />
+          <CityName>Shanghaï {' '}</CityName>
+          <Clock format={'HH:mm:ss'} ticking={true} timezone={'Asia/Shanghai'} />
         </ListElement>
         <ListElement>
-        <CityName>Everland {' '}</CityName><Clock format={'HH:mm:ss'} ticking={true} timezone={'Europe/Paris'} />
+          <CityName>Everland {' '}</CityName>
+          <Clock format={'HH:mm:ss'} ticking={true} timezone={'Europe/Paris'} />
         </ListElement>
       </ListWrapper>
     </Container>
   )
-}
+};

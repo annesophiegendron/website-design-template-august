@@ -6,10 +6,9 @@ import { TimeZone } from '../components/TimeZone';
 
 // Header section
 const SectionHeader = styled.section`
-  // padding: 15vh 0;
   text-align: center;
   background: #0375FF;
-  padding: 8vh 0 12vh;
+  padding: 6vh 0 15vh;
 `
 
 const SmallTitle = styled.h1`
@@ -33,7 +32,7 @@ const SmallTitle = styled.h1`
 `
 
 const BigTitle = styled.h2`
-  font-size: 17vw;
+  font-size: 16vw;
   text-transform: uppercase;
   letter-spacing: 15px;
   margin:0;

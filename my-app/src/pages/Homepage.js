@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 //components
 import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 // assets
 import { ArrowSvg } from '../assets/svg/arrow_svg';
@@ -69,6 +70,7 @@ const IntroTitleLeft = styled.h3`
   height: 300px;
   margin-top: auto;
   padding-left: 10%;
+  padding-right: 10%;
 `
 
 const TextWrap = styled.div`
@@ -117,6 +119,7 @@ export const Homepage = () => {
           <IntroTextLink>How to win a popularity contest <a style={{ paddingLeft: "25px", marginTop: "-5px"}} href="#"><ArrowSvg /></a></IntroTextLink>
         </TextWrap>
       </SectionIntro>
+      <Footer />
     </Wrapper>
   )
 };

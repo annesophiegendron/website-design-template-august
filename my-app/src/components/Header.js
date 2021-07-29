@@ -13,11 +13,12 @@ const SectionHeader = styled.section`
 
 const SmallTitle = styled.h1`
   font-size: 3.2vw;
+  font-weight: 700;
   text-transform: uppercase;
   margin:0;
   padding:0;
   animation: slide-up 0.5s linear;
-4
+
   @keyframes slide-up {
     from {
       transform: translateY(50px);
@@ -33,6 +34,7 @@ const SmallTitle = styled.h1`
 
 const BigTitle = styled.h2`
   font-size: 16vw;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 15px;
   margin:0;

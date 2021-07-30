@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { Article } from '../components/Article';
+import { SocialContact } from '../components/SocialContact';
 
 const Wrapper = styled.div`
   margin: 0;
@@ -52,6 +53,7 @@ export const Homepage = (props) => {
         text="Branding is a popularity contest – after all, products don’t end up in people’s homes by chance. So, that’s what we do. Simplify and amplify, to help define and design tomorrow’s most popular consumer brands."
         linkText="how to win a popularity contest"
       />
+      <SocialContact />
       <Footer />
     </Wrapper>
   )

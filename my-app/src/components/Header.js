@@ -8,11 +8,7 @@ import { TimeZone } from '../components/TimeZone';
 const SectionHeader = styled.section`
   text-align: center;
   background: #0375FF;
-  padding: 15vh 0 15vh;
-
-  @media (min-width: 992px) {
-    padding: 6vh 0 15vh;
-  }
+  padding: 21vh 0 15vh;
 `
 
 const SmallTitle = styled.h1`

@@ -13,32 +13,38 @@ const Overlay = styled.div`
   left: 0;
   background-color: #0375FF;
   overflow-y: hidden;
-
-  @media screen and (max-height: 450px) {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
 `
 
 const OverlayContent = styled.div`
-  position: relative;
   width: 100%;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
   display: flex;
-  flex-wrap: wrap;
   font-weight: bold;
   letter-spacing: 1px;
+  justify-content: center;
+  font-size: 4rem;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  @media (min-width: 992px) {
+    font-size: 7.5rem;
+   }
+`
+
+const LinkWrapper = styled.div`
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   padding: 8px;
   font-family: "Montserrat", sans-serif;
-  font-size: 7.5rem;
   color: #0D0D0D;
   cursor: pointer;
   display: block;
@@ -48,14 +54,13 @@ const StyledLink = styled(Link)`
   &:hover{
     text-decoration: underline;
   }
-@media screen and (max-height: 450px) {
+  @media screen and (max-height: 450px) {
   font-size: 20px
 }
 `
 
 const CloseButton = styled.a`
   position: absolute;
-  // top: 20px;
   right: 5%;
   top: 25px;
   font-size: 60px;
@@ -98,12 +103,15 @@ export const OverlayNav = () => {
           </StyledLink>
           <CloseButton onClick={() => setMenu(false)}>&#8855;</CloseButton>
           <OverlayContent>
-            <StyledLink to="/work" exact onClick={() => setMenu(false)}>work,</StyledLink>
-            <StyledLink to="/about" exact onClick={() => setMenu(false)}>about,</StyledLink>
-            <StyledLink to="/team" exact onClick={() => setMenu(false)}>team,</StyledLink>
-            <StyledLink to="/contact" exact onClick={() => setMenu(false)}>contact,</StyledLink>
-            <StyledLink  style={{ textDecoration: 'none', cursor: 'default' }}>shop,</StyledLink>
-            <StyledLink to="/news" exact onClick={() => setMenu(false)}>news</StyledLink>
+            <LinkWrapper>
+              <StyledLink to="/work" exact onClick={() => setMenu(false)}>work,</StyledLink>
+              <StyledLink to="/about" exact onClick={() => setMenu(false)}>about,</StyledLink>
+              <StyledLink to="/team" exact onClick={() => setMenu(false)}>team,</StyledLink>
+              <StyledLink to="/contact" exact onClick={() => setMenu(false)}>contact,</StyledLink>
+              <StyledLink style={{ textDecoration: 'none', cursor: 'default' }}>shop,</StyledLink>
+              <StyledLink to="/news" exact onClick={() => setMenu(false)}>news</StyledLink>
+            </LinkWrapper>
+
           </OverlayContent>
         </Overlay>
       )}

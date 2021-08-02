@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // librairies
 import styled from 'styled-components';
@@ -9,6 +10,7 @@ import { Footer } from '../components/Footer';
 import { Article } from '../components/Article';
 import { SocialContact } from '../components/SocialContact';
 import { Products } from '../components/Products';
+import { OverlayNav } from '../components/OverlayNav';
 
 const Wrapper = styled.div`
   margin: 0;
@@ -27,7 +29,6 @@ const SectionHeader = styled.div`
 const Emoticon = styled.span`
   position: absolute;
   font-size: 10vh;
-  cursor: pointer;
   color: #0D0D0D;
   left: 5%;
 `
@@ -45,12 +46,12 @@ export const Homepage = (props) => {
     <Wrapper>
       <SectionHeader>
         <Emoticon>&#9787;</Emoticon>
-        <HamburgerMenu>&#9776;</HamburgerMenu>
+        <OverlayNav />
       </SectionHeader>
       <Header />
       <Article
         leftTitle="Popular. It’s Not For
-        Everyone."
+                        Everyone."
         text="Branding is a popularity contest – after all, products don’t end up in people’s homes by chance. So, that’s what we do. Simplify and amplify, to help define and design tomorrow’s most popular consumer brands."
         linkText="how to win a popularity contest"
       />

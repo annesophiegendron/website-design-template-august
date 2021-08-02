@@ -22,10 +22,10 @@ const Left = styled.div`
   flex-direction: column;
 `
 
-const Title = styled.h1`
+const Title = styled.section`
   position: -webkit-sticky;
   position: sticky;
-  top: 10px;
+  top: 5px;
   margin-left: 20px;
   color: black;
   min-height: 100vh;
@@ -45,9 +45,9 @@ const Image = styled.div`
 
 const Section = styled.section`
 width: 100%;
+display: flex;
 
 height: 100vh;
-display: flex;
 align-items: center;
 justify-content: center;
 `
@@ -60,24 +60,27 @@ export const Products = () => {
     const sections = document.querySelectorAll(".color-section");
     const initBgColor = document.body.dataset.initBgColor;
 
+console.log(sections)
+
     sections.forEach((section, i) => {
       const prevColor = i === 0 ? initBgColor : sections[i - 1].dataset.bgColor;
 
       ScrollTrigger.create({
         trigger: section,
-        start: "top center+=20%",
-        onEnter: () =>
+        start: "top +=20%",
 
+        onEnter: () =>
           gsap.to(".container", {
             backgroundColor: section.dataset.bgColor,
             duration: 0.8,
             overwrite: "auto"
           }),
+
         onLeaveBack: () =>
           gsap.to(".container", {
             backgroundColor: prevColor,
             duration: 0.8,
-            overwrite: "auto"
+            overwrite: "auto",
           })
       });
     });
@@ -87,9 +90,12 @@ export const Products = () => {
     <div>
       <Container>
 
-        <Left className="container" ref={ref}>
-          <Section className="color-section" data-bg-color="#E8E6DF" >
-          </Section>
+        <Left className="container" ref={ref} >
+
+          <Title data-bg-color="#E8E6DF">
+<h1>STICKY TEXT</h1>
+          </Title>
+
           <Section className="color-section" data-bg-color="#CCE8F5">
           </Section>
           <Section className="color-section" data-bg-color="#DEDCC2">
@@ -99,6 +105,8 @@ export const Products = () => {
           <Section className="color-section" data-bg-color="#BCC4A1">
           </Section>
           <Section className="color-section" data-bg-color="#355253">
+          </Section>
+          <Section className="color-section" data-bg-color="#E8E8E8">
           </Section>
           <Section className="color-section" data-bg-color="#E8E8E8">
           </Section>

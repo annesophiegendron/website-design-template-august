@@ -40,14 +40,11 @@ const Left = styled.div`
 
 const Title = styled.h1`
   width: 70%;
-  // position: -webkit-sticky;
-  // position: sticky;
   bottom: 0;
   margin-left: 60px;
   color: black;
   display: block;
   font-size: 3.5rem;
-
   position: absolute;
 `
 
@@ -91,11 +88,12 @@ export const Products = (props) => {
 
   useEffect(() => {
     let sections = gsap.utils.toArray("section");
+    let tl = gsap.timeline();
 
     sections.forEach((section, i) => {
       ScrollTrigger.create({
         scrub: true,
-        ease: "power2",
+        ease: "power1.out",
         trigger: section,
         start: "top 50%",
         end: "+=100%",
@@ -119,7 +117,7 @@ export const Products = (props) => {
           <Section className="content-wrap">
             <SubTitle id="brand"></SubTitle>
             <Title id="titre"></Title>
-          <IntroTextLink>See all cases ->{props.linkText}<a style={{ paddingLeft: "25px", padding: "5px"}} href="https://media.giphy.com/media/3oz8xZvvOZRmKay4xy/giphy.gif"></a></IntroTextLink>
+            <IntroTextLink>See all cases ->{props.linkText}<a style={{ paddingLeft: "25px", padding: "5px" }} href="https://media.giphy.com/media/3oz8xZvvOZRmKay4xy/giphy.gif"></a></IntroTextLink>
           </Section>
         </Left>
 

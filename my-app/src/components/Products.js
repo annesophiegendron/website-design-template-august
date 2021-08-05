@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-const Container = styled.section`
+import { bigTitles, colours, brandName, elementImages } from '../assets/data/constants';
+
+const Container = styled.div`
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -22,10 +24,20 @@ const Left = styled.div`
   flex-direction: column;
 `
 
-const Title = styled.section`
+const Title = styled.span`
   position: -webkit-sticky;
   position: sticky;
   top: 5px;
+  margin-left: 20px;
+  color: black;
+  min-height: 100vh;
+  display: block;
+`
+
+const SubTitle = styled.span`
+  position: -webkit-sticky;
+  position: sticky;
+  top: 25px;
   margin-left: 20px;
   color: black;
   min-height: 100vh;
@@ -38,92 +50,73 @@ const Right = styled.div`
   overflow: scroll;
 `
 
-const Image = styled.div`
+const Image = styled.section`
   position: relative;
   height: 100vh;
 `
 
-const Section = styled.section`
-width: 100%;
-display: flex;
-
-height: 100vh;
-align-items: center;
-justify-content: center;
+const Section = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  color: black;
+  min-height: 100vh;
+  display: block;
 `
 
-export const Products = () => {
-  const ref = useRef(null);
+export const Products = (props) => {
   gsap.registerPlugin(ScrollTrigger);
+  const ref = useRef(null);
 
   useEffect(() => {
-    const sections = document.querySelectorAll(".color-section");
-    const initBgColor = document.body.dataset.initBgColor;
-
-console.log(sections)
+    let sections = gsap.utils.toArray("section");
 
     sections.forEach((section, i) => {
-      const prevColor = i === 0 ? initBgColor : sections[i - 1].dataset.bgColor;
 
       ScrollTrigger.create({
+        markers: true,
+        scrub: true,
+        ease: "power2",
         trigger: section,
-        start: "top +=20%",
+        start: "top 50%",
+        end: "+=100%",
+        onToggle: self => {
+          if (self.isActive) { // anime seulement si section active (onMouseEnter & onMouseBack)
+            gsap.to(".left-side",
+              { backgroundColor: colours[i], overwrite: true });
+            console.log(document.getElementById("titre").innerHTML = bigTitles[i]);
+            document.getElementById("brand").innerHTML = brandName[i];
+          }
+        }
 
-        onEnter: () =>
-          gsap.to(".container", {
-            backgroundColor: section.dataset.bgColor,
-            duration: 0.8,
-            overwrite: "auto"
-          }),
-
-        onLeaveBack: () =>
-          gsap.to(".container", {
-            backgroundColor: prevColor,
-            duration: 0.8,
-            overwrite: "auto",
-          })
-      });
+      })
     });
-  })
+  }, []);
 
   return (
-    <div>
-      <Container>
+    <>
+      <Container  className="wrapper">
 
-        <Left className="container" ref={ref} >
+          <Left className="left-side" ref={ref}>
+            <Section className="content-wrap">
+            <Title id="titre"></Title>
+            <SubTitle id="brand"></SubTitle>
+            </Section>
+          </Left>
 
-          <Title data-bg-color="#E8E6DF">
-<h1>STICKY TEXT</h1>
-          </Title>
-
-          <Section className="color-section" data-bg-color="#CCE8F5">
-          </Section>
-          <Section className="color-section" data-bg-color="#DEDCC2">
-          </Section>
-          <Section className="color-section" data-bg-color="#FFC2D2">
-          </Section>
-          <Section className="color-section" data-bg-color="#BCC4A1">
-          </Section>
-          <Section className="color-section" data-bg-color="#355253">
-          </Section>
-          <Section className="color-section" data-bg-color="#E8E8E8">
-          </Section>
-          <Section className="color-section" data-bg-color="#E8E8E8">
-          </Section>
-        </Left>
-
-        <Right>
-          <Image style={{ backgroundImage: "url(https://everland.dk/wp-content/uploads/2021/03/TuborgSquash_02-1440x1024.jpg)", backgroundSize: "cover" }}></Image>
-          <Image style={{ backgroundImage: "url(https://everland.dk/wp-content/uploads/2021/04/Danone-Fjord-Brand-Design-Case-7-1-2400x1351.jpg)", backgroundSize: "cover" }}></Image>
-          <Image style={{ backgroundImage: "url(https://everland.dk/wp-content/uploads/2021/02/Naturfrisk_Brus_08-1440x810.jpg)", backgroundSize: "cover" }}></Image>
-          <Image style={{ backgroundImage: "url(https://everland.dk/wp-content/uploads/2021/03/everland_rema1000_hygiejne_021-1.jpg)", backgroundSize: "cover" }}></Image>
-          <Image style={{ backgroundImage: "url(https://everland.dk/wp-content/uploads/2021/02/Carlsberg-case-hop-logo.jpg)", backgroundSize: "cover" }}></Image>
-          <Image style={{ backgroundImage: "url(https://images.unsplash.com/photo-1609047286215-7dbe2ae99109?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2933&q=80)", backgroundSize: "cover" }}></Image>
-          <Image style={{ backgroundImage: "url(https://everland.dk/wp-content/uploads/2021/03/Laesk_Can_06-2400x1350.jpg)", backgroundSize: "cover" }}></Image>
-          <Image style={{ backgroundImage: "url(https://everland.dk/wp-content/uploads/2021/03/1Artboard10copy2-1800x1012.jpg)", backgroundSize: "cover" }}></Image>
-        </Right>
+          <Right>
+            {elementImages.map((elementImage, i) => (
+              <Image key={i} className="text" style={{ backgroundImage: `url('${elementImage}')`, backgroundSize: "cover" }}></Image>
+            ))}
+          </Right>
 
       </Container>
-    </div>
+
+    </>
   )
-}
+};
+

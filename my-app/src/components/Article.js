@@ -94,7 +94,7 @@ export const Article = (props) => {
       <IntroTitleLeft>{props.leftTitle}</IntroTitleLeft>
       <TextWrap>
         <IntroTextRight>{props.text}</IntroTextRight>
-        <IntroTextLink>{props.linkText}<a style={{ paddingLeft: "25px", marginTop: "-5px"}} href="#"><ArrowSvg /></a></IntroTextLink>
+        <IntroTextLink>{props.linkText}<a style={{ paddingLeft: "25px", marginTop: "-5px"}} href="https://media.giphy.com/media/3oz8xZvvOZRmKay4xy/giphy.gif"><ArrowSvg /></a></IntroTextLink>
       </TextWrap>
     </SectionIntro>
   )

@@ -3,7 +3,6 @@ import React from 'react';
 // librairies
 import styled from 'styled-components';
 import Clock from 'react-live-clock';
-import Moment from 'react-moment';
 import 'moment-timezone';
 
 const Container = styled.div`

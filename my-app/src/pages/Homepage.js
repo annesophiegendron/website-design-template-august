@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 // librairies
 import styled from 'styled-components';
@@ -31,14 +30,7 @@ const Emoticon = styled.span`
   font-size: 10vh;
   color: #0D0D0D;
   left: 5%;
-`
-
-const HamburgerMenu = styled.span`
-  position: absolute;
-  font-size: 8vh;
   cursor: pointer;
-  color: #0D0D0D;
-  right: 5%;
 `
 
 export const Homepage = (props) => {

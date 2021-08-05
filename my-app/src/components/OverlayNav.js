@@ -21,7 +21,7 @@ const OverlayContent = styled.div`
   font-weight: bold;
   letter-spacing: 1px;
   justify-content: center;
-  font-size: 4rem;
+  font-size: 4.5rem;
   margin: 0;
   position: absolute;
   top: 50%;

@@ -13,7 +13,6 @@ const Container = styled.div`
 
 const Left = styled.div`
   flex-basis: 50%;
-
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -24,24 +23,30 @@ const Left = styled.div`
   flex-direction: column;
 `
 
-const Title = styled.span`
+const Title = styled.h1`
+  width: 70%;
   position: -webkit-sticky;
   position: sticky;
-  top: 5px;
-  margin-left: 20px;
+  bottom: 20%;
+  margin-left: 60px;
   color: black;
-  min-height: 100vh;
+  min-height: 10vh;
   display: block;
+  font-size: 3rem;
 `
 
-const SubTitle = styled.span`
-  position: -webkit-sticky;
-  position: sticky;
-  top: 25px;
-  margin-left: 20px;
+const SubTitle = styled.h2`
+  // position: -webkit-sticky;
+  // position: sticky;
+  padding-top: 5%;
+  margin-left: 60px;
   color: black;
   min-height: 100vh;
   display: block;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
 `
 
 const Right = styled.div`
@@ -57,7 +62,6 @@ const Image = styled.section`
 
 const Section = styled.div`
   width: 100%;
-  display: flex;
   align-items: center;
   justify-content: center;
   position: -webkit-sticky;
@@ -76,7 +80,6 @@ export const Products = (props) => {
     let sections = gsap.utils.toArray("section");
 
     sections.forEach((section, i) => {
-
       ScrollTrigger.create({
         markers: true,
         scrub: true,
@@ -88,34 +91,32 @@ export const Products = (props) => {
           if (self.isActive) { // anime seulement si section active (onMouseEnter & onMouseBack)
             gsap.to(".left-side",
               { backgroundColor: colours[i], overwrite: true });
-            console.log(document.getElementById("titre").innerHTML = bigTitles[i]);
             document.getElementById("brand").innerHTML = brandName[i];
+            document.getElementById("titre").innerHTML = bigTitles[i];
           }
         }
-
       })
     });
   }, []);
 
   return (
     <>
-      <Container  className="wrapper">
+      <Container className="wrapper">
 
-          <Left className="left-side" ref={ref}>
-            <Section className="content-wrap">
+        <Left className="left-side" ref={ref}>
+          <Section className="content-wrap">
+            <SubTitle id="brand">Toborg</SubTitle>
             <Title id="titre"></Title>
-            <SubTitle id="brand"></SubTitle>
-            </Section>
-          </Left>
+          </Section>
+        </Left>
 
-          <Right>
-            {elementImages.map((elementImage, i) => (
-              <Image key={i} className="text" style={{ backgroundImage: `url('${elementImage}')`, backgroundSize: "cover" }}></Image>
-            ))}
-          </Right>
+        <Right>
+          {elementImages.map((elementImage, i) => (
+            <Image key={i} className="text" style={{ backgroundImage: `url('${elementImage}')`, backgroundSize: "cover" }}></Image>
+          ))}
+        </Right>
 
       </Container>
-
     </>
   )
 };

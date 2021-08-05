@@ -1,4 +1,7 @@
 export const brandName = [
+  " ",
+  " ",
+  "toborg squash",
   "toborg squash",
   "danone fjord",
   "naturfrisk",

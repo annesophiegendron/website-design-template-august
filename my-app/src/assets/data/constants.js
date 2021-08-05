@@ -1,6 +1,6 @@
 export const brandName = [
-  " ",
-  " ",
+  "toborg squash",
+  "toborg squash",
   "toborg squash",
   "toborg squash",
   "danone fjord",
@@ -13,9 +13,9 @@ export const brandName = [
 ];
 
 export const bigTitles = [
-  " ",
-  " ",
-  " ",
+  "Origin ally Refreshing",
+  "Origin ally Refreshing",
+  "Origin ally Refreshing",
   "Origin ally Refreshing",
   "Born in Scandinavia. Perfected in France.",
   "In Harmony with Nature",

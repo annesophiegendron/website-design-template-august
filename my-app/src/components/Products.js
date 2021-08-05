@@ -5,10 +5,24 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 import { bigTitles, colours, brandName, elementImages } from '../assets/data/constants';
 
+// assets
+import { ArrowSvg } from '../assets/svg/arrow_svg';
+
 const Container = styled.div`
   display: flex;
   width: 100%;
   flex-direction: row;
+`
+
+const Section = styled.div`
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  color: black;
+  display: block;
 `
 
 const Left = styled.div`
@@ -25,28 +39,38 @@ const Left = styled.div`
 
 const Title = styled.h1`
   width: 70%;
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 20%;
+  // position: -webkit-sticky;
+  // position: sticky;
+  bottom: 0;
   margin-left: 60px;
   color: black;
-  min-height: 10vh;
   display: block;
-  font-size: 3rem;
+  font-size: 3.5rem;
+
+  position: absolute;
 `
 
 const SubTitle = styled.h2`
-  // position: -webkit-sticky;
-  // position: sticky;
-  padding-top: 5%;
   margin-left: 60px;
   color: black;
-  min-height: 100vh;
   display: block;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 600;
+  margin-bottom: 400px;
+  margin-top: 50px;
+`
+
+const IntroTextLink = styled.p`
+  margin-left: 60px;
+  color: black;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 13px;
+  position: absolute;
 `
 
 const Right = styled.div`
@@ -60,18 +84,6 @@ const Image = styled.section`
   height: 100vh;
 `
 
-const Section = styled.div`
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0px;
-  color: black;
-  min-height: 100vh;
-  display: block;
-`
-
 export const Products = (props) => {
   gsap.registerPlugin(ScrollTrigger);
   const ref = useRef(null);
@@ -81,7 +93,6 @@ export const Products = (props) => {
 
     sections.forEach((section, i) => {
       ScrollTrigger.create({
-        markers: true,
         scrub: true,
         ease: "power2",
         trigger: section,
@@ -105,8 +116,9 @@ export const Products = (props) => {
 
         <Left className="left-side" ref={ref}>
           <Section className="content-wrap">
-            <SubTitle id="brand">Toborg</SubTitle>
+            <SubTitle id="brand"></SubTitle>
             <Title id="titre"></Title>
+          <IntroTextLink>See all cases {props.linkText}<a style={{ paddingLeft: "25px", padding: "5px"}} href="https://media.giphy.com/media/3oz8xZvvOZRmKay4xy/giphy.gif"></a></IntroTextLink>
           </Section>
         </Left>
 

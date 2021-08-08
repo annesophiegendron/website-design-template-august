@@ -5,9 +5,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 import { bigTitles, colours, brandName, elementImages } from '../assets/data/constants';
 
-// assets
-import { ArrowSvg } from '../assets/svg/arrow_svg';
-
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -79,17 +76,17 @@ const Right = styled.div`
 
 const Image = styled.section`
   position: relative;
-  height: 100vh;
+  height: 110vh;
 `
 
+gsap.registerPlugin(ScrollTrigger);
+gsap.core.globals('ScrollTrigger', ScrollTrigger);
+
 export const Products = (props) => {
-  gsap.registerPlugin(ScrollTrigger);
   const ref = useRef(null);
 
   useEffect(() => {
     let sections = gsap.utils.toArray("section");
-    let tl = gsap.timeline();
-
     sections.forEach((section, i) => {
       ScrollTrigger.create({
         scrub: true,
@@ -99,12 +96,11 @@ export const Products = (props) => {
         end: "+=100%",
         onToggle: self => {
           if (self.isActive) { // anime seulement si section active (onMouseEnter & onMouseBack)
-            gsap.to(".left-side",
-              { backgroundColor: colours[i], overwrite: true });
+            gsap.to(".left-side", { backgroundColor: colours[i], overwrite: true });
             document.getElementById("brand").innerHTML = brandName[i];
             document.getElementById("titre").innerHTML = bigTitles[i];
           }
-        }
+        },
       })
     });
   }, []);
@@ -117,7 +113,7 @@ export const Products = (props) => {
           <Section className="content-wrap">
             <SubTitle id="brand"></SubTitle>
             <Title id="titre"></Title>
-            <IntroTextLink>See all cases ->{props.linkText}<a style={{ paddingLeft: "25px", padding: "5px" }} href="https://media.giphy.com/media/3oz8xZvvOZRmKay4xy/giphy.gif"></a></IntroTextLink>
+            <IntroTextLink><a style={{  textDecoration: "none", color: "black", cursor: "pointer", paddingLeft: "25px", padding: "5px" }} href="https://media.giphy.com/media/3oz8xZvvOZRmKay4xy/giphy.gif">See all cases ->{props.linkText}</a></IntroTextLink>
           </Section>
         </Left>
 

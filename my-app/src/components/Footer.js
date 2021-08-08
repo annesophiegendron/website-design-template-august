@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  background: #E75603;
+  background: #0460D9;
   height: 100%;
 
     @media (min-width: 992px) {
@@ -45,7 +45,7 @@ const FooterText = styled.p`
 const Button = styled.button`
 border: black solid 2px;
 background: black;
-color: #E75603;
+color: #0460D9;
 fontSize: 0.85rem;
 margin: 0;
 font-weight: bold;

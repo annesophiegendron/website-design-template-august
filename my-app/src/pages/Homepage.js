@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 // Section top
 const SectionHeader = styled.div`
   height: 100px;
-  background-color: #0375FF;
+  background-color: #F2C9CC;
   justify-content: space-between;
   padding: 20px;
 `
@@ -42,10 +42,9 @@ export const Homepage = (props) => {
       </SectionHeader>
       <Header />
       <Article
-        leftTitle="Popular. It’s Not For
-                        Everyone."
-        text="Branding is a popularity contest – after all, products don’t end up in people’s homes by chance. So, that’s what we do. Simplify and amplify, to help define and design tomorrow’s most popular consumer brands."
-        linkText="how to win a popularity contest"
+        leftTitle="faucibus. vitae aliquet. nec ullamcorper"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Senectus et netus et malesuada fames. Purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae. Bibendum neque egestas congue quisque egestas diam in."
+        linkText="egestas tellus rutrum tellus pellentesque eu"
       />
       <Products />
       <SocialContact />

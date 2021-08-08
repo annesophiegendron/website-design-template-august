@@ -11,7 +11,7 @@ const Overlay = styled.div`
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #0375FF;
+  background-color: #D0D3D9;
   overflow-y: hidden;
 `
 
@@ -21,7 +21,7 @@ const OverlayContent = styled.div`
   font-weight: bold;
   letter-spacing: 1px;
   justify-content: center;
-  font-size: 4.5rem;
+  font-size: 5rem;
   margin: 0;
   position: absolute;
   top: 50%;

@@ -12,6 +12,7 @@ import { Contact } from './pages/Contact';
 import { News } from './pages/News';
 
 function App() {
+
   return (
     <BrowserRouter>
       <main>

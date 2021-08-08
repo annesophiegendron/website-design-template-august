@@ -7,7 +7,7 @@ import { TimeZone } from '../components/TimeZone';
 // Header section
 const SectionHeader = styled.section`
   text-align: center;
-  background: #0375FF;
+  background: #F2C9CC;
   padding: 21vh 0 15vh;
 `
 
@@ -23,7 +23,7 @@ const SmallTitle = styled.h1`
     from {
       transform: translateY(50px);
       z-index: -2;
-      color: #0375FF;
+      color: #F2C9CC;
     }
     to {
       transform: translateY(0);
@@ -44,7 +44,7 @@ const BigTitle = styled.h2`
 
 // Time section
 const SectionTime = styled.section`
-  background: #0375FF;
+  background: #F2C9CC;
   padding: 3vh 0;
 `
 
@@ -52,8 +52,8 @@ export const Header = () => {
   return (
     <div>
       <SectionHeader>
-        <SmallTitle>welcome to</SmallTitle>
-        <BigTitle>everland</BigTitle>
+        <SmallTitle>viverra nam</SmallTitle>
+        <BigTitle>urnamole</BigTitle>
       </SectionHeader>
       <SectionTime>
         <TimeZone />

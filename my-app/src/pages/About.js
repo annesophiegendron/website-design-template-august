@@ -33,8 +33,9 @@ export const About = () => {
         <OverlayNav />
       </SectionHeader>
       <Article
-        leftTitle="Make it pop!"
-        text="We see branding as a popularity contest – after all, products don’t end up in people’s homes by chance. In the race to become everything to everyone, too many brands end up competing on noise, clutter and confusion. Our approach is different. To simplify and amplify. To distill your brand essence, and make it pop!"
+        leftTitle="a iaculis at!"
+        linkText="est lorem ipsum dolor sit amet"
+        text="Bibendum arcu vitae elementum curabitur vitae. Facilisis magna etiam tempor orci eu lobortis elementum nibh. Nam aliquam sem et tortor consequat id porta. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor."
       />
     </Wrapper>
   )

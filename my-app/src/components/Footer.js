@@ -51,6 +51,7 @@ margin: 0;
 font-weight: bold;
 padding: 10px;
 margin-top: 10px;
+cursor: pointer;
 `
 
 export const Footer = () => {
@@ -71,7 +72,7 @@ export const Footer = () => {
       </ElementWrapper>
       <ElementWrapper style={{ display: "block" }}>
         <FooterText>Partner of </FooterText>
-        <Button>plastic change</Button>
+        <Button><a href="https://plasticchange.org/" style={{textDecoration: "none", color: "#0460D9"}}>plastic change</a></Button>
       </ElementWrapper>
     </Container>
   )

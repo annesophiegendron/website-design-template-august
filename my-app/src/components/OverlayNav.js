@@ -90,6 +90,9 @@ const Emoticon = styled.span`
 export const OverlayNav = () => {
   const [showMenu, setMenu] = useState(false, true)
 
+  const [isOpen, setIsOpen] = useState(document.body.style.position = "fixed");
+  const [isClosed, setIsClosed]= useState(document.body.style.position = "unset");
+
   return (
     <>
       {!showMenu && (
@@ -98,7 +101,7 @@ export const OverlayNav = () => {
 
       {showMenu && (
         <Overlay width="100%">
-          <StyledLink to="/" exact style={{ textDecoration: 'none' }}>
+          <StyledLink to="/" style={{ textDecoration: 'none' }}>
             <Emoticon onClick={() => setMenu(false)}>&#9787;</Emoticon>
           </StyledLink>
           <CloseButton onClick={() => setMenu(false)}>&#8855;</CloseButton>

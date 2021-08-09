@@ -103,6 +103,13 @@ export const Products = (props) => {
         },
       })
     });
+
+    return () => {
+      // Cleanup scroll listeners
+      ScrollTrigger.getAll("killIt").forEach(st => st.kill())
+      console.log(ScrollTrigger.getAll())
+    }
+
   }, []);
 
   return (
@@ -113,7 +120,7 @@ export const Products = (props) => {
           <Section className="content-wrap">
             <SubTitle id="brand"></SubTitle>
             <Title id="titre"></Title>
-            <IntroTextLink><a style={{  textDecoration: "none", color: "black", cursor: "pointer", paddingLeft: "25px", padding: "5px" }} href="https://media.giphy.com/media/3oz8xZvvOZRmKay4xy/giphy.gif">See all cases ->{props.linkText}</a></IntroTextLink>
+            <IntroTextLink><a style={{ textDecoration: "none", color: "black", cursor: "pointer", paddingLeft: "25px", padding: "5px" }} href="https://media.giphy.com/media/3oz8xZvvOZRmKay4xy/giphy.gif">See all cases ->{props.linkText}</a></IntroTextLink>
           </Section>
         </Left>
 
@@ -127,4 +134,3 @@ export const Products = (props) => {
     </>
   )
 };
-

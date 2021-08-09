@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
@@ -53,16 +53,20 @@ const Image = styled.img`
 `
 
 export const Work = () => {
+
+  const [isOpen, setIsOpen] = useState(document.body.style.position = "fixed");
+  const [isClosed, setIsClosed] = useState(document.body.style.position = "unset");
+
   return (
-    <Wrapper>
+    <Wrapper style={setIsClosed}>
       <SectionHeader style={{ position: 'absolute' }}>
         <StyledLink to="/" style={{ textDecoration: 'none' }}>
           <Emoticon>&#9787;</Emoticon>
         </StyledLink>
-        <OverlayNav />
+        <OverlayNav style={setIsOpen}  />
 
       </SectionHeader>
-      <Image src="https://everland.dk/wp-content/uploads/2021/03/TuborgSquash_02-2400x1706.jpg" alt="Logo">
+      <Image src="https://images.unsplash.com/photo-1544702514-d01427b9aa8d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=826&q=80" alt="header image">
       </Image>
       <Article
         leftTitle="aenean. pharetra magna. ac placerat."

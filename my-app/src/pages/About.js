@@ -34,6 +34,7 @@ export const About = () => {
       </SectionHeader>
       <Article
         leftTitle="a iaculis at!"
+        link="https://www.dictionary.com/browse/about"
         linkText="est lorem ipsum dolor sit amet"
         text="Bibendum arcu vitae elementum curabitur vitae. Facilisis magna etiam tempor orci eu lobortis elementum nibh. Nam aliquam sem et tortor consequat id porta. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor."
       />

@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// assets
-import { ArrowSvg } from '../assets/svg/arrow_svg';
-
 const SectionIntro = styled.section`
   display: block;
   margin-top: auto;
@@ -94,7 +91,7 @@ export const Article = (props) => {
       <IntroTitleLeft>{props.leftTitle}</IntroTitleLeft>
       <TextWrap>
         <IntroTextRight>{props.text}</IntroTextRight>
-        <IntroTextLink><a style={{ paddingLeft: "25px", marginTop: "-5px"}} href={props.link} rel="noreferrer" target="_blank"><ArrowSvg />{props.linkText}</a></IntroTextLink>
+        <IntroTextLink><a style={{ paddingLeft: "25px", marginTop: "-5px"}} href={props.link} rel="noreferrer" target="_blank">{props.linkText}</a></IntroTextLink>
       </TextWrap>
     </SectionIntro>
   )

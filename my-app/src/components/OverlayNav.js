@@ -90,13 +90,12 @@ const Emoticon = styled.span`
 export const OverlayNav = () => {
   const [showMenu, setMenu] = useState(false, true)
 
-  const [isOpen, setIsOpen] = useState(document.body.style.position = "fixed");
-  const [isClosed, setIsClosed]= useState(document.body.style.position = "unset");
-
   return (
     <>
       {!showMenu && (
-        <HamburgerMenu onClick={() => setMenu(true)}>&#9776;</HamburgerMenu>
+        <>
+          <HamburgerMenu onClick={() => setMenu(true)}>&#9776;</HamburgerMenu>
+        </>
       )}
 
       {showMenu && (

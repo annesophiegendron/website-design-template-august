@@ -4,6 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 import { bigTitles, colours, brandName, elementImages } from '../assets/data/constants';
+import items from '../assets/data/Items';
 
 const Container = styled.div`
   display: flex;
@@ -94,6 +95,7 @@ export const Products = (props) => {
         trigger: section,
         start: "top 50%",
         end: "+=100%",
+        id: "killIt",
         onToggle: self => {
           if (self.isActive) { // anime seulement si section active (onMouseEnter & onMouseBack)
             gsap.to(".left-side", { backgroundColor: colours[i], overwrite: true });
@@ -117,7 +119,7 @@ export const Products = (props) => {
       <Container className="wrapper">
 
         <Left className="left-side" ref={ref}>
-          <Section className="content-wrap">
+          <Section>
             <SubTitle id="brand"></SubTitle>
             <Title id="titre"></Title>
             <IntroTextLink><a style={{ textDecoration: "none", color: "black", cursor: "pointer", paddingLeft: "25px", padding: "5px" }} href="https://media.giphy.com/media/3oz8xZvvOZRmKay4xy/giphy.gif">See all cases ->{props.linkText}</a></IntroTextLink>
@@ -125,8 +127,8 @@ export const Products = (props) => {
         </Left>
 
         <Right>
-          {elementImages.map((elementImage, i) => (
-            <Image key={i} className="text" style={{ backgroundImage: `url('${elementImage}')`, backgroundSize: "cover" }}></Image>
+          {items.map((item, i) => (
+            <Image key={i} className="text" style={{ backgroundImage: `url('${item.image}')`, backgroundSize: "cover" }}></Image>
           ))}
         </Right>
 

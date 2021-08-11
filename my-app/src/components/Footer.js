@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
   background: #0460D9;
   height: 100%;
+  height: fit-content;
 
     @media (min-width: 992px) {
       display: flex;
@@ -58,7 +60,9 @@ export const Footer = () => {
   return (
     <Container>
       <ElementWrapper>
-        <Emoticon>&#9787;</Emoticon>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <Emoticon>&#9787;</Emoticon>
+        </Link>
       </ElementWrapper>
       <ElementWrapper>
         <FooterText>Name Name</FooterText>
@@ -72,7 +76,7 @@ export const Footer = () => {
       </ElementWrapper>
       <ElementWrapper style={{ display: "block" }}>
         <FooterText>Partner of </FooterText>
-        <Button><a href="https://plasticchange.org/" style={{textDecoration: "none", color: "#0460D9"}}>plastic change</a></Button>
+        <Button><a href="https://plasticchange.org/" style={{ textDecoration: "none", color: "#0460D9" }}>plastic change</a></Button>
       </ElementWrapper>
     </Container>
   )

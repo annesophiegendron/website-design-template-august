@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 // components
@@ -9,7 +9,6 @@ import { SocialContact } from '../components/SocialContact';
 import { HomeEmoticon } from '../components/HomeEmoticon';
 import { GridImages } from '../components/Grid';
 
-import { bigTitles, colours, brandName, elementImages } from '../assets/data/constants';
 import items from '../assets/data/Items';
 
 const Wrapper = styled.div`
@@ -41,9 +40,6 @@ const Grid = styled.div`
 `
 
 export const Work = () => {
-  const [isOpen, setIsOpen] = useState(document.body.style.position = "fixed");
-  const [isClosed, setIsClosed] = useState(document.body.style.position = "unset");
-
   return (
     <>
       <Wrapper>

@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const List = styled.ul`
+import '../styles/socialComponent.css';
+
+const Container = styled.ul`
 margin: 0;
 padding: 0;
 `
@@ -36,12 +38,53 @@ const Text = styled.a`
 export const SocialContact = () => {
 
   return (
-    <List>
-      <ListElement><Text>hello@email.com</Text></ListElement>
-      <ListElement><Text>+46 000 00 00</Text></ListElement>
-      <ListElement><Text>instagram</Text></ListElement>
-      <ListElement><Text>linkedin</Text></ListElement>
-      <ListElement><Text>pinterest</Text></ListElement>
-    </List>
+    <Container>
+      <ListElement>
+        <Text class="container">
+          <div class="element text">
+            <span>+46 (0)72 000 00 00</span>
+            <p>+46 (0)72 000 00 00</p>
+          </div>
+        </Text>
+      </ListElement>
+
+      <ListElement>
+        <Text class="container">
+          <div class="element text">
+            <span>hello@hello.com</span>
+            <p>hello@hello.com</p>
+          </div>
+        </Text>
+      </ListElement>
+
+      <ListElement>
+        <Text class="container">
+          <div class="element text">
+            <span>instagram</span>
+            <p>instagram</p>
+          </div>
+        </Text>
+      </ListElement>
+
+      <ListElement>
+        <Text class="container">
+          <div class="element text">
+            <span>pinterest</span>
+            <p>pinterest</p>
+          </div>
+        </Text>
+      </ListElement>
+
+
+      <ListElement>
+        <Text class="container">
+          <div class="element text">
+            <span>linkedin</span>
+            <p>linkedin</p>
+          </div>
+        </Text>
+      </ListElement>
+
+    </Container>
   )
 }

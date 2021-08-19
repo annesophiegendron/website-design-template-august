@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
 const Emoticon = styled.span`
-  position: absolute;
+  position: relative;
   font-size: 10vh;
   color: #0D0D0D;
   left: 100%;

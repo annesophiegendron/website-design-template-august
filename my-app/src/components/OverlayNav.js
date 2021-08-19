@@ -69,11 +69,12 @@ const CloseButton = styled.a`
   cursor: pointer;
 `
 
-const HamburgerMenu = styled.span`
-  font-size: 8vh;
+const Menu = styled.div`
+  // font-size: 8vh;
   cursor: pointer;
   color: #0D0D0D;
   right: 5%;
+  top: 5%;
   position: fixed;
   z-index: 1;
 `
@@ -87,14 +88,54 @@ const Emoticon = styled.span`
   top: 20px;
 `
 
+const Icon = styled.div`
+  border-radius: 50%;
+  text-align: center;
+  top: 0;
+  width: 130px;
+  height: 130px;
+  background: #7D5CF2;
+  position: absolute;
+  right: 10%;
+  transition: all .2s cubic-bezier(.17,.67,.84,1.38);
+`
+
+const IconText = styled.p`
+  color: white;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+`
+
 export const OverlayNav = () => {
   const [showMenu, setMenu] = useState(false, true)
+  let maxScroll = 0;
+
+  window.addEventListener("scroll", scrolling);
+  window.addEventListener("resize", resize);
+
+  function scrolling(e) {
+    let f = window.pageYOffset / maxScroll;
+    document.getElementById("icon").style.transform = "rotate(" + f * -180 + "deg)";
+  }
+
+  function resize(e) {
+    maxScroll = document.getElementById("header").offsetHeight - window.innerHeight;
+  }
 
   return (
     <>
       {!showMenu && (
         <>
-          <HamburgerMenu onClick={() => setMenu(true)}>&#9776;</HamburgerMenu>
+          {/* <Menu onClick={() => setMenu(true)}>&#9776;</Menu> */}
+          <Menu id="header" onClick={() => setMenu(true)} onScroll={resize}>
+            <Icon id="icon">
+              <IconText>menu</IconText>
+            </Icon>
+          </Menu>
         </>
       )}
 

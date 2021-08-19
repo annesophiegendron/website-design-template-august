@@ -40,8 +40,8 @@ export const SocialContact = () => {
   return (
     <Container>
       <ListElement>
-        <Text class="container">
-          <div class="element text">
+        <Text className="container">
+          <div className="element text">
             <span>+46 (0)72 000 00 00</span>
             <p>+46 (0)72 000 00 00</p>
           </div>
@@ -49,8 +49,8 @@ export const SocialContact = () => {
       </ListElement>
 
       <ListElement>
-        <Text class="container">
-          <div class="element text">
+        <Text className="container">
+          <div className="element text">
             <span>hello@hello.com</span>
             <p>hello@hello.com</p>
           </div>
@@ -58,8 +58,8 @@ export const SocialContact = () => {
       </ListElement>
 
       <ListElement>
-        <Text class="container">
-          <div class="element text">
+        <Text className="container">
+          <div className="element text">
             <span>instagram</span>
             <p>instagram</p>
           </div>
@@ -67,8 +67,8 @@ export const SocialContact = () => {
       </ListElement>
 
       <ListElement>
-        <Text class="container">
-          <div class="element text">
+        <Text className="container">
+          <div className="element text">
             <span>pinterest</span>
             <p>pinterest</p>
           </div>
@@ -77,8 +77,8 @@ export const SocialContact = () => {
 
 
       <ListElement>
-        <Text class="container">
-          <div class="element text">
+        <Text className="container">
+          <div className="element text">
             <span>linkedin</span>
             <p>linkedin</p>
           </div>

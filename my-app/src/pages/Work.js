@@ -20,8 +20,10 @@ const Wrapper = styled.div`
 // Section top
 const SectionHeader = styled.div`
   height: 100px;
-  justify-content: space-between;
-  padding: 20px;
+  display: flex;
+  justify-content: end;
+  width: 100vw;
+  position: absolute;
 `
 
 const Image = styled.img`
@@ -44,7 +46,7 @@ export const Work = () => {
     <>
       <Wrapper>
 
-        <SectionHeader style={{ position: 'absolute' }}>
+        <SectionHeader>
           <HomeEmoticon style={{ left: '100px' }} />
           <OverlayNav />
         </SectionHeader>
@@ -55,7 +57,6 @@ export const Work = () => {
         <Article
           leftTitle="aenean. pharetra magna. ac placerat."
           text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero enim sed faucibus turpis in. Mi tempus imperdiet nulla malesuada pellentesque. Ut venenatis tellus in metus vulputate eu. Id diam vel quam elementum pulvinar etiam. Eget nunc lobortis mattis aliquam faucibus purus in. "
-          linkText="est lorem ipsum dolor sit amet"
         />
 
         <Grid>

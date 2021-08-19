@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { bigTitles } from '../assets/data/constants';
 
 const GridElement = styled.div`
   height: 100vh;

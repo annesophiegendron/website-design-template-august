@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-import { bigTitles, colours, brandName, elementImages } from '../assets/data/constants';
+import { bigTitles, colours, brandName } from '../assets/data/constants';
 import items from '../assets/data/Items';
 
 const Container = styled.div`

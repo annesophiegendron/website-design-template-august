@@ -6,6 +6,8 @@ const SectionIntro = styled.section`
   margin-top: auto;
 
   @media (min-width: 992px) {
+    padding-top: 5%;
+    padding-bottom: 5%;
     display: grid;
     grid-auto-rows: 1fr;
     grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -15,15 +15,16 @@ import aboutVideo from "../assets/videos/aboutVideo.mp4"
 const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
-  margin: 0;
   flex-direction: column;
 `
 
-// Section top
+// top section
 const SectionHeader = styled.div`
   height: 100px;
-  justify-content: space-between;
-  padding: 20px;
+  display: flex;
+  justify-content: end;
+  width: 100vw;
+  position: absolute;
 `
 
 export const About = () => {
@@ -33,18 +34,13 @@ export const About = () => {
         <HomeEmoticon />
         <OverlayNav />
       </SectionHeader>
-      <Article
-        leftTitle="a iaculis at!"
-        link="https://www.dictionary.com/browse/about"
-        linkText="est lorem ipsum dolor sit amet"
-        text="Bibendum arcu vitae elementum curabitur vitae. Facilisis magna etiam tempor orci eu lobortis elementum nibh. Nam aliquam sem et tortor consequat id porta. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor."
-      />
       <VideoBanner
         video={aboutVideo}
       />
       <Article
-        leftTitle="nunc mattis enim ut tellus."
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        style={{position: 'absolute', display: 'flex', flexDirection: 'column'}}
+        leftTitle="a iaculis at!"
+        text="Bibendum arcu vitae elementum curabitur vitae. Facilisis magna etiam tempor orci eu lobortis elementum nibh. Nam aliquam sem et tortor consequat id porta. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor."
       />
       <SocialContact />
       <Footer />

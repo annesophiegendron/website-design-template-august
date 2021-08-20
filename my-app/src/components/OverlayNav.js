@@ -70,7 +70,6 @@ const CloseButton = styled.a`
 `
 
 const Menu = styled.div`
-  // font-size: 8vh;
   cursor: pointer;
   color: #0D0D0D;
   right: 5%;
@@ -112,18 +111,12 @@ const IconText = styled.p`
 
 export const OverlayNav = () => {
   const [showMenu, setMenu] = useState(false, true)
-  let maxScroll = 0;
 
   window.addEventListener("scroll", scrolling);
-  window.addEventListener("resize", resize);
 
   function scrolling(e) {
-    let f = window.pageYOffset / maxScroll;
+    let f = window.pageYOffset / 300;
     document.getElementById("icon").style.transform = "rotate(" + f * -180 + "deg)";
-  }
-
-  function resize(e) {
-    maxScroll = document.getElementById("header").offsetHeight - window.innerHeight;
   }
 
   return (
@@ -131,7 +124,7 @@ export const OverlayNav = () => {
       {!showMenu && (
         <>
           {/* <Menu onClick={() => setMenu(true)}>&#9776;</Menu> */}
-          <Menu id="header" onClick={() => setMenu(true)} onScroll={resize}>
+          <Menu id="header" onClick={() => setMenu(true)} onScroll={scrolling}>
             <Icon id="icon">
               <IconText>menu</IconText>
             </Icon>

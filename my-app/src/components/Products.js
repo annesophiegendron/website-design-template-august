@@ -40,6 +40,10 @@ const Left = styled.div`
   width: 100%;
   color: white;
   flex-direction: column;
+
+  @media (max-width: 991px) {
+    display: none;
+   }
 `
 
 const Title = styled.h1`
@@ -87,6 +91,11 @@ const Right = styled.div`
     flex-basis: 50%;
     position: relative;
     overflow: scroll;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      flex-basis: 100%;
+     }
 `
 
 const Image = styled.section`

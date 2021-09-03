@@ -9,7 +9,13 @@ import items from '../assets/data/Items';
 const Container = styled.div`
   display: flex;
   width: 100%;
-  flex-direction: row;
+  flex-direction: column;
+
+  @media (min-width: 992px) {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+   }
 `
 
 const Section = styled.div`
@@ -42,8 +48,12 @@ const Title = styled.h1`
   margin-left: 60px;
   color: black;
   display: block;
-  font-size: 3.5rem;
+  font-size: 1.5rem;
   position: absolute;
+
+  @media (min-width: 992px) {
+    font-size: 3.5rem;
+   }
 `
 
 const SubTitle = styled.h2`
@@ -65,19 +75,24 @@ const IntroTextLink = styled.p`
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 8px;
   position: absolute;
+
+  @media (min-width: 992px) {
+    font-size: 13px;
+   }
 `
 
 const Right = styled.div`
-  flex-basis: 50%;
-  position: relative;
-  overflow: scroll;
+    flex-basis: 50%;
+    position: relative;
+    overflow: scroll;
 `
 
 const Image = styled.section`
-  position: relative;
   height: 110vh;
+  position: relative;
+  background-size: cover;
 `
 
 gsap.registerPlugin(ScrollTrigger);
@@ -128,7 +143,7 @@ export const Products = (props) => {
 
         <Right>
           {items.map((item, i) => (
-            <Image key={i} className="text" style={{ backgroundImage: `url('${item.image}')`, backgroundSize: "cover" }}></Image>
+            <Image key={i} className="text" style={{ backgroundImage: `url('${item.image}')` }}></Image>
           ))}
         </Right>
 

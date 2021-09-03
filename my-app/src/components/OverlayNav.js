@@ -21,7 +21,7 @@ const OverlayContent = styled.div`
   font-weight: bold;
   letter-spacing: 1px;
   justify-content: center;
-  font-size: 5rem;
+  font-size: 4rem;
   margin: 0;
   position: absolute;
   top: 50%;
@@ -142,10 +142,10 @@ export const OverlayNav = () => {
             <LinkWrapper>
               <StyledLink to="/work" exact onClick={() => setMenu(false)}>work,</StyledLink>
               <StyledLink to="/about" exact onClick={() => setMenu(false)}>about,</StyledLink>
-              <StyledLink to="/team" exact onClick={() => setMenu(false)}>team,</StyledLink>
-              <StyledLink to="/contact" exact onClick={() => setMenu(false)}>contact,</StyledLink>
-              <StyledLink style={{ textDecoration: 'none', cursor: 'default' }}>shop,</StyledLink>
-              <StyledLink to="/news" exact onClick={() => setMenu(false)}>news</StyledLink>
+              <StyledLink style={{ textDecoration: 'line-through', cursor: "default"}}>team,</StyledLink>
+              <StyledLink style={{ textDecoration: 'line-through', cursor: "default" }}>contact,</StyledLink>
+              <StyledLink style={{ textDecoration: 'line-through', cursor: "default" }}>shop,</StyledLink>
+              <StyledLink style={{ textDecoration: 'line-through', cursor: "default" }}>news</StyledLink>
             </LinkWrapper>
 
           </OverlayContent>

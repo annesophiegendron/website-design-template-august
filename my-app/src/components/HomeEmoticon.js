@@ -12,7 +12,8 @@ const Emoticon = styled.span`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  padding: 8px;
+  left: 5%;
+  padding-top: 2%;
   font-family: "Montserrat", sans-serif;
   color: #0D0D0D;
   cursor: pointer;
@@ -20,6 +21,7 @@ const StyledLink = styled(Link)`
   transition: 0.4s;
   text-transform: capitalize;
   letter-spacing: 2px;
+  z-index: 1;
   &:hover{
     text-decoration: underline;
   }
